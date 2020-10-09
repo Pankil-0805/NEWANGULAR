@@ -119,6 +119,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularRoute"
+    },
+    "newlib": {
+      "projectType": "library",
+      "root": "projects/newlib",
+      "sourceRoot": "projects/newlib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/newlib/tsconfig.lib.json",
+            "project": "projects/newlib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/newlib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/newlib/src/test.ts",
+            "tsConfig": "projects/newlib/tsconfig.spec.json",
+            "karmaConfig": "projects/newlib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/newlib/tsconfig.lib.json",
+              "projects/newlib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "AngularRoute",
+  "cli": {
+    "analytics": "f5c48982-9627-4d9b-bee0-ba147c6d8d11"
+  }
 }
