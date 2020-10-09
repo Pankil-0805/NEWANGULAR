@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'lib-newlib',
   template: `
     <p>
-      new libs works!!
+      new libs are working !!
     </p>
   `,
   styles: [
